@@ -1,6 +1,6 @@
 (() => {
   const id = window.GREENHOUS_GA4_ID;
-  if (!id || !/^G-[A-Z0-9]+$/.test(id)) return;
+  if (!id || !/^G-[A-Z0-9]{10}$/.test(id)) return;
   const consentKey = "greenhous-ga-consent-v1";
   const loadAnalytics = () => {
     if (window.__greenhousGaLoaded) return;
@@ -29,3 +29,4 @@
     if (button.dataset.consent === "yes") loadAnalytics();
   });
 })();
+
