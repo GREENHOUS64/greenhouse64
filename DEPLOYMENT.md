@@ -20,3 +20,5 @@ GA4 Measurement ID `G-0ZKCXNVC1R` is configured. Analytics loads only after visi
 - Add the legal operator identity, INN, contact/address, and retention period to `privacy.html` when available.
 - Review Supabase Auth leaked-password protection in project Authentication security settings.
 - Test owner login, denied non-admin login, lead status and plant management.
+
+
