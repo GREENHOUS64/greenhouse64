@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#080d09">
-<title>Защищённая панель GREENHOUS</title>
+<title>Защищённая панель GREENHOUSE</title>
 <link rel="stylesheet" href="site.css">
 <style>
 body{min-height:100vh}.admin-shell{width:min(1120px,calc(100% - 36px));margin:42px auto}.admin-head,.admin-actions{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}.admin-head{margin-bottom:28px}.admin-head h1{font:500 clamp(34px,5vw,58px)/1 "Cormorant Garamond",Georgia,serif}.admin-card{padding:24px;border:1px solid rgba(190,220,184,.18);background:#101a12;margin:18px 0}.admin-card h2{font:500 32px/1.1 "Cormorant Garamond",Georgia,serif;margin:0 0 18px}.admin-note{color:#a4afa2;font-size:13px}.admin-form{display:grid;gap:12px;max-width:420px}.admin-form input,.admin-grid input,.admin-grid textarea,.admin-grid select{width:100%;padding:11px;background:#0b120d;color:#f3f5ef;border:1px solid rgba(190,220,184,.2)}.admin-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.admin-table{width:100%;border-collapse:collapse;font-size:13px}.admin-table th,.admin-table td{padding:10px;text-align:left;vertical-align:top;border-bottom:1px solid rgba(190,220,184,.12)}.admin-table th{color:#a4afa2;font-weight:500}.admin-table select{min-width:130px}.table-wrap{overflow:auto}.status{min-height:28px;color:#b7e69a}.status.error{color:#f2a99a}.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.admin-grid .wide{grid-column:1/-1}.hidden{display:none!important}.admin-button{min-height:42px;padding:9px 14px;border:1px solid #8acb68;background:#8acb68;color:#071007;font-weight:700;cursor:pointer}.admin-button.ghost{background:transparent;color:#b7e69a}.admin-button.danger{border-color:#d99383;color:#f2a99a;background:transparent}@media(max-width:680px){.admin-shell{margin:24px auto}.admin-card{padding:17px}.admin-grid{grid-template-columns:1fr}.admin-grid .wide{grid-column:auto}.admin-table{min-width:680px}}
@@ -13,7 +13,7 @@ body{min-height:100vh}.admin-shell{width:min(1120px,calc(100% - 36px));margin:42
 </head>
 <body>
 <main class="admin-shell">
-  <header class="admin-head"><div><a class="site-logo" href="index.html">GREEN<span>HOUS</span></a><h1>Панель управления</h1></div><a class="site-button site-button-ghost" href="index.html">На сайт ↗</a></header>
+  <header class="admin-head"><div><a class="site-logo" href="index.html">GREENHOUSE</a><h1>Панель управления</h1></div><a class="site-button site-button-ghost" href="index.html">На сайт ↗</a></header>
   <section id="setupNotice" class="admin-card hidden"><h2>Панель ещё не подключена</h2><p class="admin-note">Добавьте URL проекта Supabase и публичный ключ в supabase-client-config.js. Секретный ключ сюда не добавлять.</p></section>
   <section id="loginPanel" class="admin-card hidden"><h2>Вход администратора</h2><p class="admin-note">Вход доступен только пользователям, добавленным владельцем в список администраторов Supabase.</p><form id="loginForm" class="admin-form"><label>Email<input name="email" type="email" autocomplete="username" required></label><label>Пароль<input name="password" type="password" autocomplete="current-password" required></label><button class="admin-button" type="submit">Войти</button></form><p id="loginStatus" class="status" role="status"></p></section>
   <section id="appPanel" class="hidden">

@@ -1,10 +1,10 @@
 (() => {
-  const id = window.GREENHOUS_GA4_ID;
+  const id = window.GREENHOUSE_GA4_ID;
   if (!id || !/^G-[A-Z0-9]{10}$/.test(id)) return;
-  const consentKey = "greenhous-ga-consent-v1";
+  const consentKey = "greenhouse-ga-consent-v1";
   const loadAnalytics = () => {
-    if (window.__greenhousGaLoaded) return;
-    window.__greenhousGaLoaded = true;
+    if (window.__greenhouseGaLoaded) return;
+    window.__greenhouseGaLoaded = true;
     const script = document.createElement("script");
     script.async = true;
     script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`;
@@ -29,4 +29,3 @@
     if (button.dataset.consent === "yes") loadAnalytics();
   });
 })();
-

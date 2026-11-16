@@ -1,5 +1,5 @@
 
-/* Shared styles for GREENHOUS static pages and new homepage elements */
+/* Shared styles for GREENHOUSE static pages and new homepage elements */
 :root { color-scheme: dark; }
 body { background:#080d09; color:#f3f5ef; font:400 16px/1.65 Manrope,Arial,sans-serif; }
 a { color:inherit; text-decoration:none; }

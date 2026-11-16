@@ -2,8 +2,8 @@ import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 const byId = (id) => document.getElementById(id);
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const say = (el, text, error = false) => { el.textContent = text; el.classList.toggle("error", error); };
-const url = window.GREENHOUS_SUPABASE_URL;
-const key = window.GREENHOUS_SUPABASE_PUBLISHABLE_KEY;
+const url = window.GREENHOUSE_SUPABASE_URL;
+const key = window.GREENHOUSE_SUPABASE_PUBLISHABLE_KEY;
 let client;
 let currentUser;
 if (!url || !key || !/^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(url)) {

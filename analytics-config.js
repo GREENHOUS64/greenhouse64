@@ -1,3 +1,3 @@
-// GA4 Measurement ID GREENHOUS.
-window.GREENHOUS_GA4_ID = "G-0ZKCXNVC1R";
+// GA4 Measurement ID GREENHOUSE.
+window.GREENHOUSE_GA4_ID = "G-0ZKCXNVC1R";
 

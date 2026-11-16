@@ -1,4 +1,4 @@
--- GREENHOUS security hardening after initial production setup.
+-- GREENHOUSE security hardening after initial production setup.
 -- Rate-limit rows are private and server-role only.
 alter table greenhouse_private.lead_rate_limits enable row level security;
 revoke all on schema greenhouse_private from public, anon, authenticated;
@@ -35,3 +35,5 @@ create policy admins_delete_plants
 insert into public.admin_users (user_id, role, is_active)
 select id, 'owner', true from auth.users where lower(email) = lower('egorte2008@mail.ru')
 on conflict (user_id) do update set role = 'owner', is_active = true;
+
+
