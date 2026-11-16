@@ -1,2 +1,2 @@
-// Заполните реальным идентификатором GA4 вида G-XXXXXXXXXX, полученным владельцем сайта.
-window.GREENHOUS_GA4_ID = "";
+// GA4 Measurement ID GREENHOUS.
+window.GREENHOUS_GA4_ID = "G-0ZKCXNVC1R";
