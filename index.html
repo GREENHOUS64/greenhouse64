@@ -8,6 +8,10 @@
 <meta name="description" content="GREENHOUS — озеленение, посадка растений, благоустройство и сезонный уход в Энгельсе, Саратове и области.">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://greenhous64.github.io/greenhouse64/">
+<meta property="og:image" content="https://greenhous64.github.io/greenhouse64/images/social-preview.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://greenhous64.github.io/greenhouse64/">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="GREENHOUS">
 <meta property="og:title" content="GREENHOUS — озеленение и благоустройство в Энгельсе">
@@ -149,7 +153,7 @@ header {
       rgba(5,10,6,.96),
       rgba(5,10,6,.78) 48%,
       rgba(5,10,6,.2)),
-    url("images/5.jpg")
+    url("images/1.jpg")
     center/cover;
 }
 
@@ -946,21 +950,20 @@ footer { padding:24px 0; }
 @media(prefers-reduced-motion:reduce) { *,*::before,*::after { transition-duration:.01ms!important; scroll-behavior:auto!important; } }
 
 </style>
+<link rel="stylesheet" href="site.css">
 </head>
 
 <body>
 
 <header>
   <div class="container nav">
-    <a class="logo" href="#top">GREEN<span>HOUSE</span></a>
+    <a class="logo" href="#top">GREEN<span>HOUS</span></a>
 
     <nav class="nav-links" id="navLinks" aria-label="Основная навигация">
-      <a href="#about">О компании</a>
-      <a href="#services">Услуги</a>
-      <a href="#offers">Предложения</a>
+      <a href="services.html">Услуги</a>
+      <a href="cases.html">Кейсы</a>
+      <a href="faq.html">Вопросы</a>
       <a href="#catalog">Растения</a>
-      <a href="#portfolio">Портфолио</a>
-      <a href="#reviews">Отзывы</a>
       <a href="#contacts">Контакты</a>
     </nav>
 
@@ -989,10 +992,10 @@ footer { padding:24px 0; }
     </p>
 
     <div class="hero-actions">
-      <a class="button" href="#contacts">Обсудить свой участок</a>
-      <a class="text-link" href="#services">Посмотреть услуги ↗</a>
+      <a class="button" href="#contacts">Оставить заявку</a>
+      <a class="text-link" href="services.html">Посмотреть услуги ↗</a>
     </div>
-    <div class="hero-promise"><span></span> Сначала выслушаем задачу. Стоимость и сроки уточнит оператор.</div>
+    <div class="hero-promise"><span></span> Ответим в течение 2 часов в рабочее время. Стоимость уточнит оператор.</div>
   </div>
 </section>
 
@@ -1000,7 +1003,10 @@ footer { padding:24px 0; }
 <section id="about">
   <div class="container about-grid">
 
-    <div class="about-image" role="img" aria-label="Современный участок среди хвойных деревьев"></div>
+    <div class="about-visual">
+      <div class="about-image" role="img" aria-label="Благоустроенная зона отдыха с садом и водоёмом"></div>
+      <div class="real-photo-slot"><span class="photo-slot-mark" aria-hidden="true">＋</span><div><strong>Место для настоящего фото объекта GREENHOUS</strong><p>Добавим здесь снимок первой выполненной работы — с разрешения заказчика.</p></div></div>
+    </div>
 
     <div class="about-text">
       <div class="kicker">01 / О компании</div>
@@ -1057,9 +1063,11 @@ footer { padding:24px 0; }
       </p>
     </div>
 
-    <div class="service-grid">
+    <div class="service-carousel-head"><p class="carousel-hint">Листайте, чтобы увидеть все направления</p><div class="carousel-controls"><button type="button" class="carousel-control" data-service-prev aria-label="Предыдущие услуги">←</button><button type="button" class="carousel-control" data-service-next aria-label="Следующие услуги">→</button></div></div>
+    <div class="service-grid" id="serviceCarousel" role="region" aria-roledescription="карусель" aria-label="Услуги GREENHOUS">
 
       <article class="service">
+        <img class="service-photo" src="images/3.jpg" alt="Ряды декоративных растений в питомнике" loading="lazy" decoding="async">
         <span class="service-number">01</span>
         <h3>Озеленение и посадка</h3>
         <p>Подбор и посадка деревьев, кустарников,
@@ -1067,6 +1075,7 @@ footer { padding:24px 0; }
       </article>
 
       <article class="service">
+        <img class="service-photo" src="images/4.jpg" alt="Благоустроенный сад с дорожкой и цветниками" loading="lazy" decoding="async">
         <span class="service-number">02</span>
         <h3>Благоустройство</h3>
         <p>Комплексное преображение территории,
@@ -1074,6 +1083,7 @@ footer { padding:24px 0; }
       </article>
 
       <article class="service">
+        <img class="service-photo" src="images/9.jpg" alt="Инструменты для работы с почвой и растениями" loading="lazy" decoding="async">
         <span class="service-number">03</span>
         <h3>Уход за садом</h3>
         <p>Обрезка деревьев и кустарников,
@@ -1081,20 +1091,23 @@ footer { padding:24px 0; }
       </article>
 
       <article class="service">
+        <img class="service-photo" src="images/6.jpg" alt="Молодой зелёный саженец" loading="lazy" decoding="async">
         <span class="service-number">04</span>
         <h3>Растения для участка</h3>
         <p>Хвойные и декоративные растения
         для частных и общественных пространств.</p>
       </article>
 
-      <article class="service">
+      <article class="service service-no-photo">
+        <div class="service-photo-note" aria-hidden="true">❄</div>
         <span class="service-number">05</span>
         <h3>Зимние работы</h3>
         <p>Уборка снега, очистка крыш,
         удаление сосулек и борьба с гололёдом.</p>
       </article>
 
-      <article class="service">
+      <article class="service service-no-photo">
+        <div class="service-photo-note" aria-hidden="true">GH</div>
         <span class="service-number">06</span>
         <h3>Индивидуальные задачи</h3>
         <p>Обсудим особенности территории
@@ -1159,7 +1172,7 @@ footer { padding:24px 0; }
     <div class="catalog-grid">
 
       <article class="plant">
-        <div class="plant-image"></div>
+        <img class="plant-image" src="images/17.jpg" alt="Хвойные деревья в лесном ландшафте" loading="lazy" decoding="async">
         <div class="plant-content">
           <small>Хвойные</small>
           <h3>Хвойные растения</h3>
@@ -1170,7 +1183,7 @@ footer { padding:24px 0; }
       </article>
 
       <article class="plant">
-        <div class="plant-image"></div>
+        <img class="plant-image" src="images/14.jpg" alt="Цветущий сад с декоративными кустарниками вдоль дорожки" loading="lazy" decoding="async">
         <div class="plant-content">
           <small>Декоративные</small>
           <h3>Декоративные кустарники</h3>
@@ -1181,7 +1194,7 @@ footer { padding:24px 0; }
       </article>
 
       <article class="plant">
-        <div class="plant-image"></div>
+        <img class="plant-image" src="images/12.jpg" alt="Цветущие многолетние растения" loading="lazy" decoding="async">
         <div class="plant-content">
           <small>Посадочный материал</small>
           <h3>Деревья и многолетники</h3>
@@ -1197,7 +1210,7 @@ footer { padding:24px 0; }
 
 <!-- СЕЗОННЫЕ РАБОТЫ -->
 <section class="feature">
-  <div class="feature-image"></div>
+  <img class="feature-image" src="images/10.jpg" alt="Садовая дорожка в окружении деревьев и зелени" loading="lazy" decoding="async">
 
   <div class="feature-content">
     <div class="kicker">04 / Работа по сезону</div>
@@ -1247,40 +1260,57 @@ footer { padding:24px 0; }
       </div>
 
       <p class="section-intro">
-        Здесь собраны визуальные ориентиры GREENHOUS.
-        Фотографии собственных проектов добавим
-        по мере выполнения работ.
+        Это визуальные примеры, а не фотографии выполненных проектов GREENHOUS. Реальные кейсы публикуем с разрешения заказчиков.
       </p>
     </div>
 
     <div class="gallery">
 
       <div class="gallery-item">
-        <img src="images/5.jpg" loading="lazy" decoding="async" alt="Зелёные растения и садовая композиция">
-        <span>Зелёные пространства</span>
+        <img src="images/8.jpg" loading="lazy" decoding="async" alt="Крупный план зелёной листвы">
+        <span>Фактура листвы</span>
       </div>
 
       <div class="gallery-item">
-        <img src="images/15.jpg" loading="lazy" decoding="async" alt="Садовая дорожка в зелёном саду">
-        <span>Садовые решения</span>
+        <img src="images/13.jpg" loading="lazy" decoding="async" alt="Текстура папоротниковой зелени">
+        <span>Природные текстуры</span>
       </div>
 
       <div class="gallery-item">
-        <img src="images/17.jpg" loading="lazy" decoding="async" alt="Хвойные деревья в природном ландшафте">
-        <span>Мир растений</span>
+        <img src="images/15.jpg" loading="lazy" decoding="async" alt="Лес и озеро в природном ландшафте">
+        <span>Природный ландшафт</span>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ОТЗЫВЫ -->
+<!-- ОТЗЫВЫ КЛИЕНТОВ -->
 <section class="reviews" id="reviews">
   <div class="container reviews-inner">
-    <div class="kicker">07 / Отзывы</div>
-    <h2>Доверие складывается из работы</h2>
-    <p>GREENHOUS только начинает формировать портфолио и репутацию. Здесь появятся отзывы клиентов после выполненных проектов — с их согласия.</p>
-    <a class="text-link" href="#contacts">Обсудить свою задачу ↗</a>
+    <div class="section-head"><div><div class="kicker">07 / Отзывы</div><h2>Пять мест для настоящих отзывов</h2></div><p class="section-intro">Не публикуем выдуманные слова от имени клиентов. Добавим отзыв только с разрешения автора.</p></div>
+    <div class="review-slots">
+      <article class="review-slot"><span>01</span><div><strong>Отзыв первого клиента</strong><p>Текст и имя добавим после получения согласия.</p></div></article>
+      <article class="review-slot"><span>02</span><div><strong>Отзыв второго клиента</strong><p>Текст и имя добавим после получения согласия.</p></div></article>
+      <article class="review-slot"><span>03</span><div><strong>Отзыв третьего клиента</strong><p>Текст и имя добавим после получения согласия.</p></div></article>
+      <article class="review-slot"><span>04</span><div><strong>Отзыв четвёртого клиента</strong><p>Текст и имя добавим после получения согласия.</p></div></article>
+      <article class="review-slot"><span>05</span><div><strong>Отзыв пятого клиента</strong><p>Текст и имя добавим после получения согласия.</p></div></article>
+    </div>
+    <a class="text-link" href="cases.html">Посмотреть раздел кейсов ↗</a>
+  </div>
+</section>
+
+<!-- ЧАСТЫЕ ВОПРОСЫ -->
+<section class="faq-preview" id="faq">
+  <div class="container">
+    <div class="section-head"><div><div class="kicker">Частые вопросы</div><h2>Коротко о важном</h2></div><a class="text-link" href="faq.html">Все вопросы ↗</a></div>
+    <div class="faq-list">
+      <details><summary>В каких городах работает GREENHOUS?</summary><p>Основной город — Энгельс. Также обсуждаем выезды в Саратов и по Саратовской области.</p></details>
+      <details><summary>Сколько стоят услуги?</summary><p>Стоимость зависит от объёма работ, территории и материалов. Точную цену уточнит оператор после обсуждения задачи.</p></details>
+      <details><summary>Как оставить заявку?</summary><p>Заполните форму или позвоните. После отправки формы откроется почтовое приложение — проверьте и отправьте подготовленное письмо.</p></details>
+      <details><summary>Поможете выбрать растения?</summary><p>Да, расскажите оператору о месте посадки, освещении и желаемом результате. Наличие и стоимость подтвердим отдельно.</p></details>
+      <details><summary>Какие работы доступны зимой?</summary><p>Обсудим уборку снега, очистку крыш, удаление сосулек, обработку от гололёда и зимний уход за участком.</p></details>
+    </div>
   </div>
 </section>
 
@@ -1295,7 +1325,7 @@ footer { padding:24px 0; }
 
       <p class="section-intro" style="margin-top:22px">
         Расскажите, что хотите изменить или создать.
-        Свяжемся с вами и обсудим дальнейшие шаги.
+        Ответим в течение 2 часов в рабочее время. Расскажите, что хотите изменить или создать.
       </p>
 
       <div class="contact-details">
@@ -1327,8 +1357,9 @@ footer { padding:24px 0; }
 
       </div>
       <div class="map-block">
-        <div class="map-heading"><span>Регион обслуживания</span><a href="https://www.openstreetmap.org/#map=10/51.51/46.08" target="_blank" rel="noopener">Открыть карту ↗</a></div>
-        <iframe title="Карта Энгельса и Саратова — регион работы GREENHOUS" src="https://www.openstreetmap.org/export/embed.html?bbox=45.80%2C51.43%2C46.25%2C51.69&layer=mapnik" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="map-heading"><span>Энгельс · Саратов · область</span><a href="https://www.openstreetmap.org/#map=10/51.51/46.08" target="_blank" rel="noopener">Открыть карту ↗</a></div>
+        <iframe title="Карта региона обслуживания GREENHOUS: Энгельс и Саратов" src="https://www.openstreetmap.org/export/embed.html?bbox=45.80%2C51.43%2C46.25%2C51.69&layer=mapnik" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="directions"><strong>Как добраться</strong><p>GREENHOUS обсуждает выезд на ваш участок. Укажите город и район в заявке — оператор подтвердит возможность выезда и маршрут. Отдельный адрес офиса для посещения здесь не заявлен.</p><a href="https://www.google.com/maps/dir/?api=1&destination=Энгельс" target="_blank" rel="noopener">Построить маршрут до Энгельса ↗</a></div>
       </div>
     </div>
 
@@ -1345,13 +1376,12 @@ footer { padding:24px 0; }
       <textarea class="field" name="message"
                 placeholder="Кратко опишите задачу"></textarea>
 
-      <button class="button" type="submit" style="width:100%">
-        Отправить по email
-      </button>
+      <label class="consent-row"><input type="checkbox" name="consent" required><span>Согласен(на) на обработку имени, телефона и текста обращения для ответа. <a href="privacy.html">Политика конфиденциальности</a>.</span></label>
 
-      <p class="privacy-note">
-        Нажимая кнопку, вы соглашаетесь на обработку указанных данных для ответа на обращение.
-      </p>
+      <button class="button" type="submit" style="width:100%">
+        Открыть письмо для отправки
+      </button>
+      <p class="privacy-note">После нажатия откроется почтовое приложение. Письмо будет отправлено только после того, как вы подтвердите отправку в приложении.</p>
 
       <div class="form-status" id="formStatus"></div>
     </form>
@@ -1366,6 +1396,7 @@ footer { padding:24px 0; }
     <a class="footer-logo" href="#top">GREENHOUS</a>
     <span>© <span id="currentYear">2026</span> GREENHOUS · Энгельс, Саратов и область</span>
     <a href="tel:+79093384746">Позвонить</a>
+    <a href="services.html">Услуги</a><a href="cases.html">Кейсы</a><a href="faq.html">Вопросы</a><a href="privacy.html">Политика конфиденциальности</a>
     <a href="#top">Наверх ↑</a>
   </div>
 </footer>
@@ -1456,53 +1487,29 @@ document.querySelectorAll("[data-offer]").forEach(link=>link.addEventListener("c
  if(message)message.value=link.dataset.offer+". Город: Энгельс.";
 }));
 
-// Открывает подготовленное письмо на адрес GREENHOUS.
-document.getElementById("contactForm")
-.addEventListener("submit", (event) => {
+// Открывает черновик заявки в почтовом приложении; сайт не хранит заявку на сервере.
+document.getElementById("contactForm").addEventListener("submit", (event) => {
   event.preventDefault();
-  const data = new FormData(event.currentTarget);
-  const record = {
-    id: (crypto.randomUUID ? crypto.randomUUID() : `lead-${Date.now()}`),
-    name: String(data.get("name") || "").trim(),
-    phone: String(data.get("phone") || "").trim(),
-    message: String(data.get("message") || "").trim(),
-    status: "Новая",
-    createdAt: new Date().toISOString(),
-    source: "website-local"
-  };
-  // Local demonstration inbox; connect a protected server API before launch for a shared inbox.
-  try {
-    const storeKey = "greenhous-admin-v1";
-    const saved = JSON.parse(localStorage.getItem(storeKey) || "null") || {
-      leads: [],
-      plants: [
-        { id: "plant-thuja", name: "Туя западная", category: "Хвойные", availability: "Уточнить", note: "Стоимость уточняйте у оператора." },
-        { id: "plant-spruce", name: "Ель декоративная", category: "Хвойные", availability: "Уточнить", note: "Стоимость уточняйте у оператора." },
-        { id: "plant-shrub", name: "Декоративные кустарники", category: "Декоративные", availability: "Уточнить", note: "Стоимость уточняйте у оператора." },
-        { id: "plant-perennial", name: "Многолетние растения", category: "Многолетники", availability: "Уточнить", note: "Стоимость уточняйте у оператора." }
-      ],
-      services: [
-        { name: "Озеленение участков", description: "Подбор и посадка растений, создание цветников и зелёных зон.", season: "Весна — осень" },
-        { name: "Уход за садом", description: "Полив, подкормка, прополка и обработка растений.", season: "Весна — осень" },
-        { name: "Обрезка деревьев и кустарников", description: "Формирующая и санитарная обрезка.", season: "По сезону" },
-        { name: "Устройство газонов", description: "Подготовка грунта и создание зелёного покрытия.", season: "Весна — лето" },
-        { name: "Зимние работы", description: "Уборка снега, очистка крыш и удаление наледи.", season: "Зима" }
-      ]
-    };
-    saved.leads = Array.isArray(saved.leads) ? saved.leads : [];
-    saved.leads.unshift(record);
-    localStorage.setItem(storeKey, JSON.stringify(saved));
-  } catch (error) {
-    console.warn("Локально сохранить обращение не удалось", error);
-  }
+  const form = event.currentTarget;
+  if (!form.reportValidity()) return;
+  const data = new FormData(form);
   const subject = encodeURIComponent("Заявка с сайта GREENHOUS");
-  const body = encodeURIComponent(
-    `Имя: ${data.get("name")}\nТелефон: ${data.get("phone")}\nЗадача: ${data.get("message") || "Не указана"}`
-  );
-  document.getElementById("formStatus").textContent = "Заявка сохранена в этом браузере для демо панели. Открываем почтовое приложение; если оно не открылось, напишите нам на antoniykushev7@gmail.com.";
+  const body = encodeURIComponent(`Имя: ${String(data.get("name") || "").trim()}\nТелефон: ${String(data.get("phone") || "").trim()}\nЗадача: ${String(data.get("message") || "Не указана").trim()}`);
+  sessionStorage.setItem("greenhous-mail-draft-opened", "1");
   window.location.href = `mailto:antoniykushev7@gmail.com?subject=${subject}&body=${body}`;
+  window.setTimeout(() => { window.location.href = "thanks.html"; }, 900);
 });
+const serviceCarousel=document.getElementById("serviceCarousel");
+if(serviceCarousel){
+ const step=()=>{const card=serviceCarousel.querySelector(".service");return card?card.getBoundingClientRect().width+12:320};
+ document.querySelector("[data-service-prev]")?.addEventListener("click",()=>serviceCarousel.scrollBy({left:-step(),behavior:"smooth"}));
+ document.querySelector("[data-service-next]")?.addEventListener("click",()=>serviceCarousel.scrollBy({left:step(),behavior:"smooth"}));
+}
+
 </script>
 
+<a class="mobile-apply" href="#contacts">Оставить заявку <span aria-hidden="true">↗</span></a>
+<script src="analytics-config.js"></script><script src="analytics.js" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"GREENHOUS","url":"https://greenhous64.github.io/greenhouse64/","telephone":"+79093384746","email":"antoniykushev7@gmail.com","areaServed":[{"@type":"City","name":"Энгельс"},{"@type":"City","name":"Саратов"},{"@type":"AdministrativeArea","name":"Саратовская область"}],"description":"Озеленение, благоустройство и уход за участками в Энгельсе, Саратове и Саратовской области."}</script>
 </body>
 </html>
