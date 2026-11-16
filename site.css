@@ -59,12 +59,11 @@ a { color:inherit; text-decoration:none; }
 .photo-slot-mark { width:40px; height:40px; display:grid; place-items:center; flex:none; border:1px solid #8acb68; color:#b7e69a; font-size:25px; }
 .about-visual { min-width:0; }
 .about-image { background-image:url("images/2.jpg")!important; background-position:center!important; background-size:cover!important; }
-.service-carousel-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:0 0 15px; }
+.service-carousel-head { display:flex; align-items:center; justify-content:flex-start; gap:12px; margin:0 0 15px; }
 .carousel-hint { color:#a4afa2; font-size:11px; }
-.carousel-controls { display:flex; gap:7px; }
-.carousel-control { width:42px; height:42px; border:1px solid rgba(183,230,154,.35); background:#101a12; color:#b7e69a; cursor:pointer; font-size:20px; }
-.carousel-control:hover { background:#8acb68; color:#071007; }
-.service-grid { display:flex!important; overflow-x:auto; gap:12px!important; border:0!important; background:transparent!important; padding:3px 2px 14px; scroll-snap-type:x mandatory; overscroll-behavior-inline:contain; scrollbar-color:#60705e #101a12; }
+.service-grid { display:flex!important; overflow-x:auto; gap:12px!important; border:0!important; background:transparent!important; padding:3px 2px 14px; scroll-snap-type:x mandatory; overscroll-behavior-inline:contain; scrollbar-color:#60705e #101a12; cursor:grab; }
+.service-grid.is-dragging { cursor:grabbing; scroll-snap-type:none; user-select:none; }
+.service-grid.is-dragging .service-photo { pointer-events:none; }
 .service { flex:0 0 min(31%,360px); min-width:280px; scroll-snap-align:start; border:1px solid rgba(190,220,184,.16)!important; padding:20px!important; background:#101a12!important; }
 .service::before { display:none!important; content:none!important; }
 .service-photo,.service-photo-note { width:100%; height:154px; object-fit:cover; margin:-20px -20px 18px; width:calc(100% + 40px); }
@@ -100,3 +99,4 @@ a { color:inherit; text-decoration:none; }
  .garden-guide { bottom:76px!important; }.site-footer { padding-bottom:82px; }
 }
 @media(max-width:430px) { .review-slots { grid-template-columns:1fr; } }
+

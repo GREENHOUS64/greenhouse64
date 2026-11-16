@@ -1063,8 +1063,8 @@ footer { padding:24px 0; }
       </p>
     </div>
 
-    <div class="service-carousel-head"><p class="carousel-hint">Листайте, чтобы увидеть все направления</p><div class="carousel-controls"><button type="button" class="carousel-control" data-service-prev aria-label="Предыдущие услуги">←</button><button type="button" class="carousel-control" data-service-next aria-label="Следующие услуги">→</button></div></div>
-    <div class="service-grid" id="serviceCarousel" role="region" aria-roledescription="карусель" aria-label="Услуги GREENHOUS">
+    <div class="service-carousel-head"><p class="carousel-hint">Карусель листается сама — проведите по карточкам, чтобы посмотреть направления</p></div>
+    <div class="service-grid" id="serviceCarousel" role="region" aria-roledescription="карусель" aria-label="Услуги GREENHOUS" tabindex="0">
 
       <article class="service">
         <img class="service-photo" src="images/3.jpg" alt="Ряды декоративных растений в питомнике" loading="lazy" decoding="async">
@@ -1501,9 +1501,45 @@ document.getElementById("contactForm").addEventListener("submit", (event) => {
 });
 const serviceCarousel=document.getElementById("serviceCarousel");
 if(serviceCarousel){
+ const reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)");
  const step=()=>{const card=serviceCarousel.querySelector(".service");return card?card.getBoundingClientRect().width+12:320};
- document.querySelector("[data-service-prev]")?.addEventListener("click",()=>serviceCarousel.scrollBy({left:-step(),behavior:"smooth"}));
- document.querySelector("[data-service-next]")?.addEventListener("click",()=>serviceCarousel.scrollBy({left:step(),behavior:"smooth"}));
+ let autoTimer=null,hovered=false,focused=false,inView=false,resumeTimer=null,dragStart=null;
+ const stopAuto=()=>{if(autoTimer){window.clearInterval(autoTimer);autoTimer=null}};
+ const advance=()=>{
+  const end=serviceCarousel.scrollWidth-serviceCarousel.clientWidth;
+  if(end<=4)return;
+  if(serviceCarousel.scrollLeft>=end-6)serviceCarousel.scrollTo({left:0,behavior:reducedMotion.matches?"auto":"smooth"});
+  else serviceCarousel.scrollBy({left:step(),behavior:reducedMotion.matches?"auto":"smooth"});
+ };
+ const startAuto=()=>{if(reducedMotion.matches||hovered||focused||!inView||document.hidden||autoTimer)return;autoTimer=window.setInterval(advance,4200)};
+ const pauseForInteraction=()=>{stopAuto();window.clearTimeout(resumeTimer);resumeTimer=window.setTimeout(startAuto,7000)};
+ const observer=new IntersectionObserver(entries=>{inView=entries.some(entry=>entry.isIntersecting);if(inView)startAuto();else stopAuto()},{threshold:0.18});
+ observer.observe(serviceCarousel);
+ serviceCarousel.addEventListener("mouseenter",()=>{hovered=true;stopAuto()});
+ serviceCarousel.addEventListener("mouseleave",()=>{hovered=false;startAuto()});
+ serviceCarousel.addEventListener("focusin",()=>{focused=true;stopAuto()});
+ serviceCarousel.addEventListener("focusout",event=>{if(!serviceCarousel.contains(event.relatedTarget)){focused=false;startAuto()}});
+ serviceCarousel.addEventListener("pointerdown",event=>{
+  pauseForInteraction();
+  if(event.pointerType!=="mouse"||event.button!==0)return;
+  dragStart={x:event.clientX,left:serviceCarousel.scrollLeft,pointerId:event.pointerId};
+  serviceCarousel.classList.add("is-dragging");
+  serviceCarousel.setPointerCapture(event.pointerId);
+ });
+ serviceCarousel.addEventListener("pointermove",event=>{
+  if(!dragStart||dragStart.pointerId!==event.pointerId)return;
+  const delta=event.clientX-dragStart.x;
+  if(Math.abs(delta)>3)event.preventDefault();
+  serviceCarousel.scrollLeft=dragStart.left-delta;
+ });
+ const finishDrag=event=>{if(!dragStart||dragStart.pointerId!==event.pointerId)return;dragStart=null;serviceCarousel.classList.remove("is-dragging")};
+ serviceCarousel.addEventListener("pointerup",finishDrag);
+ serviceCarousel.addEventListener("pointercancel",finishDrag);
+ serviceCarousel.addEventListener("lostpointercapture",()=>{dragStart=null;serviceCarousel.classList.remove("is-dragging")});
+ serviceCarousel.addEventListener("touchstart",pauseForInteraction,{passive:true});
+ document.addEventListener("visibilitychange",()=>document.hidden?stopAuto():startAuto());
+ reducedMotion.addEventListener?.("change",()=>reducedMotion.matches?stopAuto():startAuto());
+ startAuto();
 }
 
 </script>
